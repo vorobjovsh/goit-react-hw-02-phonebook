@@ -5,14 +5,14 @@ import shortid from 'shortid';
 
 class App extends Component {
   state = {
-    contacts: [],
-    name: ''
+    contacts: []
   }
 
-  addName = name => {
+  addName = ({name, number}) => {
     const user = {
       id: shortid.generate(),
       name,
+      number
     };
 
     this.setState(({ contacts }) => ({
