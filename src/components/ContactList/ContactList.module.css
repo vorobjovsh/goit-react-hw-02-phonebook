@@ -5,3 +5,8 @@
 li {
   font-size: 22px;
 }
+
+.btnDelete {
+  margin-left: 10px;
+  padding: 3px 8px;
+}
