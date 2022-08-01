@@ -22,9 +22,19 @@ class App extends Component {
       number
     };
 
-    this.setState(({ contacts }) => ({
-      contacts: [user, ...contacts],
-    }));
+    const sortFilter = this.state.contacts.filter(contact =>
+      contact.name === user.name,
+    );
+
+    if (sortFilter.length > 0) {
+      return alert(
+        `${user.name} is already in contacts`
+      );
+    } else {
+      this.setState(({ contacts }) => ({
+        contacts: [user, ...contacts],
+      }));
+    }
   };
 
   changeFilter = e => {
